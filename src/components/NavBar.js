@@ -5,12 +5,12 @@ import "./NavBar.css";
 function BasicTabs() {
   return (
     <nav>
-      <NavLink
+      {/* <NavLink
         to="/login"
         className="nav-link"
       >
         Login
-      </NavLink>
+      </NavLink> */}
       
       <NavLink
         to="/home"

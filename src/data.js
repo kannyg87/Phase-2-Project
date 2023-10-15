@@ -1,8 +1,8 @@
 const users = [
     {
         id: 1,
-        name: "Kanny Mohammed",
-        password: "12345678"
+        name: "Kanny",
+        password: "1234"
     },
 ];
 
