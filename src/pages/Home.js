@@ -5,7 +5,6 @@ import { Grid } from "@mui/material";
 import "./Home.css";
 
 import Cards from "../components/Cards";
-import MakeupDetails from "./MakeupDetails";
 
 function Home() {
   const [products, setProducts] = useState([]);
@@ -16,7 +15,7 @@ function Home() {
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
-             });
+      });
   }, []);
 
   const handleSearchChange = (e) => {
@@ -26,9 +25,10 @@ function Home() {
   const handleSearchSubmit = (e) => {
     e.preventDefault();
     console.log("Searching for:", searchTerm);
-    const searchedItems = products.filter(item => item.name.toLowerCase().includes(searchTerm.toLowerCase())
+    const searchedItems = products.filter((item) =>
+      item.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
-    setProducts(searchedItems)
+    setProducts(searchedItems);
   };
 
   return (
