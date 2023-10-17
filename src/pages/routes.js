@@ -1,8 +1,9 @@
 
 import { createBrowserRouter } from "react-router-dom";
-import ErrorPage from "./pages/ErrorPage";
-import Home from "./pages/Home";
-import Login from "./pages/Login";
+import ErrorPage from "./ErrorPage";
+import Home from "./Home";
+import Login from "./Login";
+import MakeupDetails from './MakeupDetails'
 
 
  const router = createBrowserRouter([
@@ -21,11 +22,11 @@ import Login from "./pages/Login";
     element: <Home />,
     errorElement: <ErrorPage />
   }, 
-  // {
-  //   path: "/profile/:id",
-  //   element: <UserProfile />,
-  //   errorElement: <ErrorPage />
-  // }
+   {
+    path: "/product/:id",
+    element:  <MakeupDetails product={product} />,
+    errorElement: <ErrorPage />
+  }
  ])
 
  export default router

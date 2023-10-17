@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import BasicTabs from "../components/NavBar";
 import { TextField, Button } from "@mui/material";
+import { Grid } from "@mui/material";
 import "./Home.css";
 
 import Cards from "../components/Cards";
+import MakeupDetails from "./MakeupDetails";
 
 function Home() {
   const [products, setProducts] = useState([]);
@@ -14,20 +16,19 @@ function Home() {
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
-      });
+             });
   }, []);
-  console.log(products);
 
-  // Handle change in the search bar
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value);
   };
 
-  // Handle search submit - logic to filter/search cards can be implemented here
   const handleSearchSubmit = (e) => {
     e.preventDefault();
     console.log("Searching for:", searchTerm);
-    // Implement search logic here...
+    const searchedItems = products.filter(item => item.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setProducts(searchedItems)
   };
 
   return (
@@ -52,9 +53,11 @@ function Home() {
           Search
         </Button>
       </form>
-      {products.map((product) => (
-        <Cards product={product} key={product.id} />
-      ))}
+      <Grid container spacing={1} className="cards-container">
+        {products.map((product) => (
+          <Cards product={product} key={product.id} />
+        ))}
+      </Grid>
     </div>
   );
 }
