@@ -21,4 +21,3 @@ function Cards({ product }) {
   );
 }
 export default Cards;
-// to={`/product/${product.name.split(' ').join('-').toLowerCase()}`}
