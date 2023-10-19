@@ -10,7 +10,6 @@ function Search({ products, setProducts }) {
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
-    console.log("Searching for:", searchTerm);
     const searchedItems = products.filter((item) =>
       item.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
