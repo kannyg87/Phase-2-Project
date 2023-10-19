@@ -27,3 +27,23 @@ npm install
 npm start
 ``````
 
+## 🌐 Deployment
+
+The Make Up App is deployed and hosted on Netlify. You can access the live version of the app via the link below:
+
+[Make Up App Live](https://incomparable-kangaroo-058d9b.netlify.app/login)
+
+### Deploying on your own
+
+If you want to deploy the Make Up App on your own Netlify account, follow these steps:
+
+1. Fork or clone this repository to your local machine.
+2. Create an account or log in to your account on [Netlify](https://www.netlify.com/).
+3. Click the "New site from Git" button on the Netlify dashboard.
+4. Connect to your preferred Git provider (e.g., GitHub).
+5. Choose the Make Up App repository.
+6. Set the build command as `npm run build` and the publish directory as `build/`.
+7. Click "Deploy site".
+   
+Once deployed, Netlify will provide you with a custom link to your live app. For continuous deployment, any time you push changes to the repository, Netlify will automatically build and redeploy the updated version.
+
