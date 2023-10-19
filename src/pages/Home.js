@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import BasicTabs from "../components/NavBar";
 import { Grid } from "@mui/material";
 import "./Home.css";
-
 import Cards from "../components/Cards";
 import Search from "../components/Search";
+import AddProductForm from "../components/AddProductForm"
+
 
 function Home() {
   const [products, setProducts] = useState([]);
@@ -16,6 +17,9 @@ function Home() {
         setProducts(data);
       });
   }, []);
+  const handleNewProductAdded = (newProduct) => {
+    setProducts(prevProducts => [...prevProducts, newProduct]);
+  };
 
   return (
     <div className="home-container">
@@ -23,6 +27,7 @@ function Home() {
 
       <h1>Hello, Home!</h1>
       <Search products={products} setProducts={setProducts} />
+      <AddProductForm onProductAdded={handleNewProductAdded} />
 
       <Grid container spacing={1} className="cards-container">
         {products.map((product) => (

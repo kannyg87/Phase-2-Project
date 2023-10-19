@@ -1,6 +1,5 @@
 import React from "react";
 import { Card, Grid } from "@mui/material";
-import { NavLink } from "react-router-dom";
 import "../pages/Home.css";
 
 function Cards({ product }) {
