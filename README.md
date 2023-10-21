@@ -25,6 +25,7 @@ git clone git@github.com:kannyg87/Phase-2-Project.git
 cd phase-2-project
 npm install
 npm start
+json-server --watch db.json
 ``````
 
 ## 🌐 Deployment

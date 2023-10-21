@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, Grid } from "@mui/material";
-import "../pages/Home.css";
+import "../pages/App.css";
 
 function Cards({ product }) {
   return (

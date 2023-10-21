@@ -1,19 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 import { TextField, Button } from "@mui/material";
-import "../../src/pages/Home.css";
+import "../../src/pages/App.css";
 
-function Search({ products, setProducts }) {
-  const [searchTerm, setSearchTerm] = useState("");
+function Search({ setSearchTerm }) {
+  
+  const [localSearchTerm, setLocalSearchTerm] = React.useState(""); 
+
   const handleSearchChange = (e) => {
-    setSearchTerm(e.target.value);
+    setLocalSearchTerm(e.target.value);
   };
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
-    const searchedItems = products.filter((item) =>
-      item.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-    setProducts(searchedItems);
+    setSearchTerm(localSearchTerm);
+    setLocalSearchTerm("");
   };
 
   return (
@@ -21,7 +21,7 @@ function Search({ products, setProducts }) {
       <TextField
         label="Search"
         variant="outlined"
-        value={searchTerm}
+        value={localSearchTerm}
         onChange={handleSearchChange}
       />
       <Button
@@ -35,4 +35,5 @@ function Search({ products, setProducts }) {
     </form>
   );
 }
+
 export default Search;

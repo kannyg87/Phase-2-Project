@@ -26,7 +26,7 @@ export default function Login() {
     );
 
     if (user) {
-      navigate("/home");
+      navigate("/product");
     } else {
       alert("Invalid Credentials");
     }
