@@ -2,18 +2,15 @@ import React from "react";
 import { TextField, Button } from "@mui/material";
 import "../../src/pages/App.css";
 
-function Search({ setSearchTerm }) {
-  
-  const [localSearchTerm, setLocalSearchTerm] = React.useState(""); 
-
+function Search({ searchTerm, setSearchTerm }) {
   const handleSearchChange = (e) => {
-    setLocalSearchTerm(e.target.value);
+    setSearchTerm(e.target.value);
   };
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
-    setSearchTerm(localSearchTerm);
-    setLocalSearchTerm("");
+    setSearchTerm(searchTerm);
+    setSearchTerm("");
   };
 
   return (
@@ -21,7 +18,7 @@ function Search({ setSearchTerm }) {
       <TextField
         label="Search"
         variant="outlined"
-        value={localSearchTerm}
+        value={searchTerm}
         onChange={handleSearchChange}
       />
       <Button
